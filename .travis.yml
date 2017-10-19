@@ -5,11 +5,13 @@ deploy:
   - skip_cleanup: true
     provider: script
     script: npm run deploy
+    github_token: $GH_TOKEN
     on:
       branch: master
   - skip_cleanup: true
     provider: script
     script: npm run deploy-branch
+    github_token: $GHB_TOKEN
     on:
       all_branches: true
       condition: '"$TRAVIS_BRANCH" != "master" && "$TRAVIS_BRANCH" != "gh-pages"'
